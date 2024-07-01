@@ -172,29 +172,31 @@ public class ReservationController {
 
 //getAllCustomerID
    private void getCustomerIds() {
-      /*  try{
-          //  ArrayList<String>allids = customerBO.serachCid();
+       try {
+           ArrayList<CustomerModel> allcus = purchaseOrderBO.getAllCustomers();
+           for (CustomerModel c : allcus) {
+               nicList.getItems().add(String.valueOf(c.getPhone_Number()));
+           }
 
-           // for (String s : allids){
-                nicList.getItems().add(s);
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       } catch (ClassNotFoundException e) {
+           throw new RuntimeException(e);
+       }
+   }
+//item
+    private void getItemCodes() {
+
+        try {
+             ArrayList<MealModel> allmeal= purchaseOrderBO.getAllMeal();
+            for (MealModel m : allmeal) {
+                reservationList.getItems().add(m.getMID());
             }
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }*/
-    }
-//item
-    private void getItemCodes() {
-        ObservableList<String> oblist = FXCollections.observableArrayList();
-        try {
-            List<String> mealid = MealRepo.getIds();
-            for (String id :mealid){
-                oblist.add(id);
-            }
-
-            reservationList.setItems(oblist);
-
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
@@ -323,7 +325,7 @@ public class ReservationController {
             System.out.println(reservationDetailModel);
             arrayList.add(reservationDetailModel);
         }
-        boolean b = TransactionRepo.setTransaction(reservationModel,arrayList);
+        boolean b = TransactionRepo.setTransaction(reservationModel,arrayList); //trancation
         if (b){
             new Alert(Alert.AlertType.INFORMATION,"Order Placed Successfully!!").show();
             clearAllFields();

@@ -7,7 +7,8 @@ import java.sql.SQLException;
 
 public interface OrderDao extends CrudDao<Reservation> {
 
-    String generateNewID() throws SQLException, ClassNotFoundException;
+
+    String getCurrentId() throws SQLException, ClassNotFoundException;
 
     boolean add(Reservation entity) throws SQLException, ClassNotFoundException;
 }

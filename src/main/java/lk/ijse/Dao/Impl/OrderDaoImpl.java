@@ -1,23 +1,29 @@
 package lk.ijse.Dao.Impl;
 
+import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.OrderDao;
 import lk.ijse.Dao.SQLUtil;
 import lk.ijse.Entity.Reservation;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderDaoImpl implements OrderDao {
     @Override
-    public String generateNewID() throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.execute("SELECT R_ID FROM Reservation ORDER BY R_ID DESC LIMIT 1");
-        if (rst.next()) {
-            int newIdNumber = Integer.parseInt(rst.getString(1).replace("R_ID-", "")) + 1;
-            return String.format("R_ID-%03d", newIdNumber);
-        } else {
-            return "R_ID-001";
-        }
+        public  String getCurrentId() throws SQLException, ClassNotFoundException {
+           String sql = "SELECT R_ID FROM Reservation ORDER BY R_ID DESC LIMIT 1";
+            PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                    .prepareStatement(sql);
+
+            ResultSet resultSet = pstm.executeQuery();
+            if (resultSet.next()) {
+                String orderId = resultSet.getString(1);
+                return orderId;
+            }
+            return null;
+
     }
 
     @Override
