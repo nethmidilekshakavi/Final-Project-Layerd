@@ -29,6 +29,7 @@ import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.BO.Custom.PurchaseOrderBO;
 import lk.ijse.DB.DbConnection;
+import lk.ijse.Entity.Customer;
 import lk.ijse.Model.*;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.*;
@@ -175,7 +176,7 @@ public class ReservationController {
        try {
            ArrayList<CustomerModel> allcus = purchaseOrderBO.getAllCustomers();
            for (CustomerModel c : allcus) {
-               nicList.getItems().add(String.valueOf(c.getPhone_Number()));
+               nicList.getItems().add(String.valueOf(c.getC_ID()));
            }
 
        } catch (SQLException e) {
@@ -348,15 +349,12 @@ public class ReservationController {
 //customer
     @FXML
     void comboCustomerList(ActionEvent event) {
-        String number = nicList.getValue();
-        if (number.equals("")){}else {
-            try {
-
-                ArrayList<CustomerModel> arrayList = customerBO.getAllNumber();
-                for (CustomerModel c : arrayList){
-                    nicList.getItems().add(String.valueOf(c.getPhone_Number()));
-                    nametxt.setText(c.getFirst_Name());
-                }
+        String cid = nicList.getValue();
+                try{
+                    CustomerModel customerModel = customerBO.serachbyIDS(cid);
+                    if(customerModel!= null){
+                        nametxt.setText(customerModel.getFirst_Name());
+                    }
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -364,21 +362,21 @@ public class ReservationController {
                 throw new RuntimeException(e);
             }
         }
-    }
+
 //meal
     @FXML
     void comboMealList(ActionEvent event) {
         String mid = reservationList.getValue();
         try{
-            SupplierModel mealModel = SupplierRepo.searchById(mid);
+            MealModel mealModel = mealBO.serachbyIDS(mid);
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
-                //   QOHtxt.setText(mealModel.);
-
             }
 
             qtytxt.requestFocus();
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

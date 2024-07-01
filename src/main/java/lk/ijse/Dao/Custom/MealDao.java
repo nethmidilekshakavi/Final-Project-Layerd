@@ -18,4 +18,6 @@ public interface MealDao extends CrudDao<Meal> {
 
 
     ArrayList<MealModel> searchMID(String mid);
+
+    MealModel searchById(String id) throws SQLException;
 }

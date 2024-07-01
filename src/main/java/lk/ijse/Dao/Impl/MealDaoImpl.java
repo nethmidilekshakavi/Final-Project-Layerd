@@ -78,5 +78,25 @@ public class MealDaoImpl implements MealDao {
         }
         return mealModels;
     }
+@Override
+    public  MealModel searchById(String id) throws SQLException {
+        String sql = "SELECT * FROM Meal WHERE M_ID = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, id);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            String M_ID = resultSet.getString(1);
+            String Name = resultSet.getString(2);
+            String Price = resultSet.getString(3);
+            MealModel mealModel = new MealModel(M_ID, Name, Price);
+
+            return mealModel;
+        }
+
+        return null;
+    }
 
 }

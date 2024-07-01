@@ -21,4 +21,5 @@ public interface CustomerBO extends SuperBo {
 
     ArrayList<CustomerModel>getAllNumber() throws SQLException, ClassNotFoundException;
 
+    CustomerModel serachbyIDS(String cid) throws SQLException, ClassNotFoundException;
 }

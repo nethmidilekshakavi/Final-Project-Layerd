@@ -2,6 +2,7 @@ package lk.ijse.Dao.Custom;
 
 import lk.ijse.Dao.CrudDao;
 import lk.ijse.Entity.Customer;
+import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.EmployeeModel;
 
 import java.sql.SQLException;
@@ -27,5 +28,6 @@ public interface CustomerDao extends CrudDao<Customer> {
 
     Customer searchByPhoneNumber(String num) throws SQLException, ClassNotFoundException;
 
+    CustomerModel searchById(String id) throws SQLException;
 }
 

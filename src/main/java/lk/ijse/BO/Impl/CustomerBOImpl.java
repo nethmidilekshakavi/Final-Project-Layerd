@@ -56,6 +56,9 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
 
-
+    @Override
+    public CustomerModel serachbyIDS(String cid) throws SQLException, ClassNotFoundException {
+        return customerDao.searchById(cid);
+    }
 
 }

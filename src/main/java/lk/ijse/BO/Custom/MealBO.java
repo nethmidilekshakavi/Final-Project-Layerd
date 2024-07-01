@@ -18,4 +18,6 @@ public interface MealBO extends SuperBo {
 
 
     ArrayList<MealModel> serachMID(String mid) throws SQLException, ClassNotFoundException;
+
+    MealModel serachbyIDS(String mid) throws SQLException, ClassNotFoundException;
 }

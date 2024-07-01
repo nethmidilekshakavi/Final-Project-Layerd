@@ -4,7 +4,7 @@ import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.CustomerDao;
 import lk.ijse.Dao.SQLUtil;
 import lk.ijse.Entity.Customer;
-import lk.ijse.Model.EmployeeModel;
+import lk.ijse.Model.CustomerModel;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -104,6 +104,30 @@ public class CustomerDaoImpl implements CustomerDao {
         ResultSet rst  = SQLUtil.execute("SELECT * FROM Customer WHERE Phone_Number = ?",num+"");
         rst.next();
         return new Customer(num + "", rst.getString(3));
+    }
+@Override
+    public CustomerModel searchById(String id) throws SQLException {
+        String sql = "SELECT * FROM Customer WHERE C_ID = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, id);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            String cid = resultSet.getString(1);
+            String nic = resultSet.getString(2);
+            String fname = resultSet.getString(3);
+            String lname = resultSet.getString(4);
+            String address = resultSet.getString(5);
+            int num = Integer.parseInt(resultSet.getString(6));
+            String email = resultSet.getString(7);
+            CustomerModel customerModel = new CustomerModel(cid,nic,fname,lname,address,num,email);
+
+            return customerModel;
+        }
+
+        return null;
     }
 
 }

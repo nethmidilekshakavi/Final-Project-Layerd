@@ -38,4 +38,11 @@ public class MealBOImpl implements MealBO {
     public ArrayList<MealModel> serachMID(String mid) throws SQLException, ClassNotFoundException {
         return mealDao.searchMID(mid);
     }
+
+@Override
+    public MealModel serachbyIDS(String mid) throws SQLException, ClassNotFoundException {
+        return mealDao.searchById(mid);
+    }
+
+
 }
