@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class TransactionRepo {
-    @SneakyThrows
+   /* @SneakyThrows
     public static boolean setTransaction(ReservationModel reservationModel, ArrayList<ReservationDetailModel> arrayList) {
         Connection connection = DbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
@@ -43,5 +43,5 @@ public class TransactionRepo {
         }else {
             return false;
         }
-    }
+    }*/
 }

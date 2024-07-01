@@ -2,6 +2,7 @@ package lk.ijse.Dao.Impl;
 
 import lk.ijse.Dao.Custom.OrderDetailDao;
 import lk.ijse.Dao.SQLUtil;
+import lk.ijse.Entity.OrderDetails;
 import lk.ijse.Entity.ReservationDetail;
 
 import java.sql.SQLException;
@@ -9,8 +10,8 @@ import java.util.ArrayList;
 
 public class OrderDetailDaoImpl implements OrderDetailDao {
     @Override
-    public boolean add(ReservationDetail entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO Reservation_Detail VALUES(?, ?, ?, ?)",entity.getRid(),entity.getMid(),entity.getQty(),entity.getUnitPrice());
+    public boolean add(OrderDetails entity) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("INSERT INTO Reservation_Detail VALUES(?, ?, ?, ?)",entity.getRid(),entity.getQty(),entity.getUnitPrice());
 
     }
 

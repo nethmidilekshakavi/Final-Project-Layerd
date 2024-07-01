@@ -302,9 +302,9 @@ public class ReservationController {
         ArrayList<CustomerModel> all =
         customerBO.getAllCustomers();
         for (int i = 0; i < all.size(); i++) {
-            int phoneNumber = all.get(i).getPhone_Number();
-            int value = Integer.parseInt(nicList.getValue());
-            if (value == phoneNumber){
+            String cid = all.get(i).getC_ID();
+            String value = (nicList.getValue());
+            if (value == cid){
                 custId = all.get(i).getC_ID();
             }
         }
@@ -326,7 +326,7 @@ public class ReservationController {
             System.out.println(reservationDetailModel);
             arrayList.add(reservationDetailModel);
         }
-        boolean b = TransactionRepo.setTransaction(reservationModel,arrayList); //trancation
+        boolean b = purchaseOrderBO.setTransaction(reservationModel,arrayList); //trancation
         if (b){
             new Alert(Alert.AlertType.INFORMATION,"Order Placed Successfully!!").show();
             clearAllFields();
@@ -371,6 +371,7 @@ public class ReservationController {
             MealModel mealModel = mealBO.serachbyIDS(mid);
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
+                ptxt.setText(mealModel.getPrice());
             }
 
             qtytxt.requestFocus();

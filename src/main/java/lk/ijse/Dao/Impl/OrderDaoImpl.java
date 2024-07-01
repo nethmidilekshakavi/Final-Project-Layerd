@@ -51,7 +51,7 @@ public class OrderDaoImpl implements OrderDao {
         return null;
     }
 
- //   INSERT INTO Reservation VALUES(?,?,?,?,?,?)
+
 
     @Override
     public boolean add(Reservation entity) throws SQLException, ClassNotFoundException {

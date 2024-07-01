@@ -1,8 +1,11 @@
 package lk.ijse.Entity;
 
+import lk.ijse.Model.ReservationDetailModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -68,5 +71,16 @@ public class CustomEntity {
     private String Date_of_Payment;
     private String Payment_Type;
     private String Amount_Paid;
+
+
+    List<ReservationDetailModel> reservationDetailModels;
+
+    public List<ReservationDetailModel> getOrderDetails() {
+        return reservationDetailModels;
+    }
+
+    public void setOrderDetails(List<ReservationDetailModel> orderDetails) {
+        reservationDetailModels= orderDetails;
+    }
 
 }
