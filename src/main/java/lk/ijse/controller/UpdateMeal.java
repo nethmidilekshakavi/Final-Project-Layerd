@@ -122,10 +122,10 @@ public class UpdateMeal extends MealController {
 
     }
 
-    public void enterID(KeyEvent keyEvent) {
+    public void enterID(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(midtxt.getText());
-            ArrayList<MealModel> mealModels = MealRepo.searchMID(id);
+            ArrayList<MealModel> mealModels = mealBO.serachMID(id);
 
            newNametxt.setText(mealModels.get(0).getName());
            newpricetxt.setText(mealModels.get(0).getPrice());

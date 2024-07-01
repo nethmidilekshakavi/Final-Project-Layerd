@@ -1,9 +1,13 @@
 package lk.ijse.Dao.Impl;
 
+import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.MealDao;
 import lk.ijse.Dao.SQLUtil;
 import lk.ijse.Entity.Meal;
+import lk.ijse.Model.MealModel;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -55,6 +59,24 @@ public class MealDaoImpl implements MealDao {
     public boolean Delete(String id) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("delete from Meal where M_ID=?",id);
 
+    }
+@Override
+    public  ArrayList<MealModel> searchMID (String mid){
+        ArrayList<MealModel> mealModels = new ArrayList<>();
+        try {
+            Connection connection = DbConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Meal WHERE M_ID = ?");
+            preparedStatement.setString(1,mid);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                MealModel mealModel = new MealModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+                mealModels.add(mealModel);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return mealModels;
     }
 
 }

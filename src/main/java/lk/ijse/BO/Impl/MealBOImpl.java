@@ -34,6 +34,8 @@ public class MealBOImpl implements MealBO {
     public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException {
         return mealDao.Delete(id);
     }
-
-
+@Override
+    public ArrayList<MealModel> serachMID(String mid) throws SQLException, ClassNotFoundException {
+        return mealDao.searchMID(mid);
+    }
 }

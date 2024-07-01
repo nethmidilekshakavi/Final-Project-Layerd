@@ -81,7 +81,7 @@ public class EmployeeRepo {
         return false;
     }*/
 
-    public static ArrayList<EmployeeModel> searchEID (String eid){
+   /* public static ArrayList<EmployeeModel> searchEID (String eid){
         ArrayList<EmployeeModel> employeeModels = new ArrayList<>();
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -97,7 +97,7 @@ public class EmployeeRepo {
             e.printStackTrace();
         }
         return employeeModels;
-    }
+    }*/
 
  /*   public static ArrayList<EmployeeModel> getAll() throws SQLException{
         ArrayList<EmployeeModel>employeeModels = new ArrayList<>();

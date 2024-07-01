@@ -105,7 +105,7 @@ public class MealRepo {
         return idList;
     }
 
-    public static ArrayList<MealModel> searchMID (String mid){
+  /*  public static ArrayList<MealModel> searchMID (String mid){
         ArrayList<MealModel> mealModels = new ArrayList<>();
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -121,7 +121,7 @@ public class MealRepo {
             e.printStackTrace();
         }
         return mealModels;
-    }
+    }*/
 
 }
 
