@@ -23,14 +23,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
-import lk.ijse.BO.Custom.EmployeeBO;
 import lk.ijse.BO.Custom.SupplierBO;
-import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Model.SupplierModel;
-import lk.ijse.Model.TM.EmployeeTM;
 import lk.ijse.Model.TM.SupplierTM;
 import lk.ijse.Model.TM.customerTM;
-import lk.ijse.Repository.SupplierRepo;
+import lk.ijse.controller.ADD.AddNewSupplier;
 
 public class SupplierController {
 

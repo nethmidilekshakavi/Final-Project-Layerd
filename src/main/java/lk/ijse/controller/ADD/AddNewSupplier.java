@@ -1,4 +1,4 @@
-package lk.ijse.controller;
+package lk.ijse.controller.ADD;
 
 import java.io.IOException;
 import java.net.URL;

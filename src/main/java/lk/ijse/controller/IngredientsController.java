@@ -24,13 +24,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
-import lk.ijse.BO.Custom.EmployeeBO;
 import lk.ijse.BO.Custom.IngredientBO;
-import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Model.IngredientModel;
-import lk.ijse.Model.TM.EmployeeTM;
 import lk.ijse.Model.TM.IngredientTM;
-import lk.ijse.Repository.IngredientRepo;
+import lk.ijse.controller.ADD.AddIngredient;
 
 public class IngredientsController {
 

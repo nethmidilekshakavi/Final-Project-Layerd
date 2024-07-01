@@ -28,6 +28,8 @@ import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.TM.customerTM;
+import lk.ijse.controller.ADD.AddNewCustomer;
+import lk.ijse.controller.Update.UpdateCustomer;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;

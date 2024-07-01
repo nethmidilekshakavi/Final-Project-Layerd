@@ -1,10 +1,5 @@
-package lk.ijse.controller;
+package lk.ijse.controller.Update;
 
-import java.awt.*;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -18,10 +13,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.Custom.EmployeeBO;
-import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.EmployeeModel;
-import lk.ijse.Repository.CustomerRepo;
 import lk.ijse.Repository.EmployeeRepo;
+
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class UpdateEmployee {
 
@@ -198,7 +196,7 @@ public class UpdateEmployee {
     public void idEnter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(eidtxt.getText());
-            ArrayList<EmployeeModel> employeeModels = EmployeeRepo.searchEID(id);
+            ArrayList<EmployeeModel> employeeModels = employeeBO.searchEid(id);
 
             nictxt.setText(employeeModels.get(0).getNIC());
            fnametxt.setText(employeeModels.get(0).getFirst_Name());

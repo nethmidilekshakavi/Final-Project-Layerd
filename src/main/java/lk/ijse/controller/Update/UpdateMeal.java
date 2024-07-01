@@ -1,9 +1,5 @@
-package lk.ijse.controller;
+package lk.ijse.controller.Update;
 
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -16,10 +12,14 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
-import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.Model.MealModel;
-import lk.ijse.Repository.MealRepo;
+import lk.ijse.controller.MealController;
+
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class UpdateMeal extends MealController {
 

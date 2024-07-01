@@ -1,10 +1,5 @@
-package lk.ijse.controller;
+package lk.ijse.controller.Update;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,13 +15,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.Custom.CustomerBO;
-import lk.ijse.Dao.Custom.CustomerDao;
-import lk.ijse.Dao.Impl.CustomerDaoImpl;
 import lk.ijse.Entity.Customer;
 import lk.ijse.Model.CustomerModel;
-import lk.ijse.Model.SupplierModel;
-import lk.ijse.Repository.CustomerRepo;
-import lk.ijse.Repository.SupplierRepo;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class UpdateCustomer {
     public static AnchorPane upane;
