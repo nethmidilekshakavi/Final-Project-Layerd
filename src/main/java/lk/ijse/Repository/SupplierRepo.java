@@ -126,7 +126,7 @@ public class SupplierRepo {
         }
         return idList;
     }
-    public static ArrayList<SupplierModel> searchSID (String sid){
+   /* public static ArrayList<SupplierModel> searchSID (String sid){
         ArrayList<SupplierModel> supplierModels = new ArrayList<>();
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -142,7 +142,7 @@ public class SupplierRepo {
             e.printStackTrace();
         }
         return supplierModels;
-    }
+    }*/
 
 
 }

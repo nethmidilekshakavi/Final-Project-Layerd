@@ -192,10 +192,10 @@ public class UpdateSupplier {
 
     }
 
-    public void enterid(KeyEvent keyEvent) {
+    public void enterid(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(sidtxt.getText());
-            ArrayList<SupplierModel> supplierModels = SupplierRepo.searchSID(id);
+            ArrayList<SupplierModel> supplierModels = supplierBO.serachSID(id);
 
            newSnametxt.setText(supplierModels.get(0).getName());
            addresstxt.setText(supplierModels.get(0).getAddress());

@@ -15,4 +15,6 @@ public interface SupplierBO extends SuperBo {
     boolean updateSupplier(SupplierModel entity) throws SQLException, ClassNotFoundException;
 
     boolean deleteSuippler(String id) throws SQLException, ClassNotFoundException;
+
+    ArrayList<SupplierModel> serachSID(String sid) throws SQLException, ClassNotFoundException;
 }

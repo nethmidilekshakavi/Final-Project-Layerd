@@ -34,4 +34,9 @@ public class SupplierBOImpl implements SupplierBO {
     public boolean deleteSuippler(String id) throws SQLException, ClassNotFoundException {
         return supplierDao.Delete(id);
     }
+
+    @Override
+    public ArrayList<SupplierModel> serachSID(String sid) throws SQLException, ClassNotFoundException {
+        return supplierDao.searchSID(sid);
+    }
 }
