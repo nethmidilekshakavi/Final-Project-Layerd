@@ -198,7 +198,7 @@ public class UpdateEmployee {
     public void idEnter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(eidtxt.getText());
-            ArrayList<EmployeeModel> employeeModels = employeeBO.searchEid(id);
+            ArrayList<EmployeeModel> employeeModels = EmployeeRepo.searchEID(id);
 
             nictxt.setText(employeeModels.get(0).getNIC());
            fnametxt.setText(employeeModels.get(0).getFirst_Name());

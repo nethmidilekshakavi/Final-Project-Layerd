@@ -82,13 +82,20 @@ public class UpdateIngredient {
     }
 
     @FXML
-    void updateIngredient(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateIngredient(ActionEvent event){
         String iidd = iidtxt.getText();
         String desc = desctxt.getText();
         String qtyOnHand = QOHtxt.getText();
         String supplier = suppliertxt.getText();
 
-        boolean c = ingredientBO.updateIngredients(new IngredientModel(iidd,desc,qtyOnHand,supplier));
+        boolean c = false;
+        try {
+            c = ingredientBO.updateIngredients(new IngredientModel(iidd,desc,qtyOnHand,supplier));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         if (c) {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -129,10 +136,10 @@ public class UpdateIngredient {
 
     }
 
-    public void idEnter(KeyEvent keyEvent) {
+    public void idEnter(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             String id = String.valueOf(iidtxt.getText());
-            ArrayList<IngredientModel> ingredientModels = IngredientRepo.searchIID(id);
+            ArrayList<IngredientModel> ingredientModels = ingredientBO.serachIID(id);
 
             desctxt.setText(ingredientModels.get(0).getDescription());
             QOHtxt.setText(ingredientModels.get(0).getQty_On_Hand());

@@ -14,4 +14,6 @@ public interface IngredientBO extends SuperBo {
     boolean updateIngredients(IngredientModel entity) throws SQLException, ClassNotFoundException;
 
     boolean deleteIngredients(String id) throws SQLException, ClassNotFoundException;
+
+    ArrayList<IngredientModel> serachIID(String iid) throws SQLException, ClassNotFoundException;
 }

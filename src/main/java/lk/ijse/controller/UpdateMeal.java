@@ -72,14 +72,21 @@ public class UpdateMeal extends MealController {
     }
 
     @FXML
-    void updateMeal(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateMeal(ActionEvent event) {
 
         String mid = midtxt.getText();
         String name = newNametxt.getText();
         String price = newpricetxt.getText();
 
 
-        boolean c = mealBO.updateCustomer(new MealModel(mid,name,price));
+        boolean c = false;
+        try {
+            c = mealBO.updateCustomer(new MealModel(mid,name,price));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         if (c) {
 
@@ -122,6 +129,7 @@ public class UpdateMeal extends MealController {
 
            newNametxt.setText(mealModels.get(0).getName());
            newpricetxt.setText(mealModels.get(0).getPrice());
+
 
         }
     }

@@ -31,7 +31,7 @@ public class IngredientRepo {
      }
      return false;
  }*/
-   public static ArrayList<IngredientModel> searchIID (String iid){
+   /*public static ArrayList<IngredientModel> searchIID (String iid){
         ArrayList<IngredientModel> ingredientModels = new ArrayList<>();
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -47,14 +47,14 @@ public class IngredientRepo {
             e.printStackTrace();
         }
         return ingredientModels;
-    }
+    }*/
 
 
 /* public static boolean updateIngredient(IngredientModel ingredientModel){
      try {
 
          Connection connection = DbConnection.getInstance().getConnection();
-         PreparedStatement ptsm = connection.prepareStatement("UPDATE Ingredient SET I_ID = ?,Descrption = ?,Qty_On_Hand = ?,S_ID = ?");
+         PreparedStatement ptsm = connection.prepareStatement("UPDATE Ingredient SET I_ID = ?,Description = ?,Qty_On_Hand = ?,S_ID = ?");
 
          ptsm.setString(1, ingredientModel.getI_ID());
          ptsm.setString(2, ingredientModel.getDescription());

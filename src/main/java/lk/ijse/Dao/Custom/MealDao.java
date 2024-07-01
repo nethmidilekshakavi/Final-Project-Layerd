@@ -15,7 +15,5 @@ public interface MealDao extends CrudDao<Meal> {
 
     boolean Delete(String id) throws SQLException, ClassNotFoundException;
 
-    Meal searchById(String code) throws SQLException, ClassNotFoundException;
 
-    ArrayList<Meal> getIds() throws SQLException, ClassNotFoundException;
 }

@@ -20,6 +20,26 @@ public class SupplierDaoImpl implements SupplierDao {
         return allsupplier;
     }
 
+    @Override
+    public boolean save(Supplier entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean update(Supplier entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Supplier search(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
 
     @Override
     public boolean Save(Supplier Entity) throws SQLException, ClassNotFoundException {

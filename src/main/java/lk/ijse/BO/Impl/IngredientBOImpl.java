@@ -27,12 +27,15 @@ public class IngredientBOImpl implements IngredientBO {
 
     @Override
     public boolean updateIngredients(IngredientModel entity) throws SQLException, ClassNotFoundException {
-        return ingredientsDao.update(new Ingredient(entity.getDescription(),entity.getQty_On_Hand(),entity.getSupplier(),entity.getI_ID()));
+        return ingredientsDao.Update(new Ingredient(entity.getI_ID(),entity.getDescription(),entity.getQty_On_Hand(),entity.getSupplier()));
     }
 
     @Override
     public boolean deleteIngredients(String id) throws SQLException, ClassNotFoundException {
-        return ingredientsDao.delete(id);
+        return ingredientsDao.Delete(id);
     }
-
+    @Override
+    public ArrayList<IngredientModel> serachIID(String iid) throws SQLException, ClassNotFoundException {
+        return ingredientsDao.searchIID(iid);
+    }
 }

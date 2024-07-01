@@ -54,7 +54,7 @@ public class MealRepo {
         return false;
     }*/
 
-   /* public static MealModel searchById(String id) throws SQLException {
+    public static MealModel searchById(String id) throws SQLException {
         String sql = "SELECT * FROM Meal WHERE M_ID = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -73,7 +73,7 @@ public class MealRepo {
         }
 
         return null;
-    }*/
+    }
     /*public static ArrayList<MealModel> getAll() throws SQLException {
         ArrayList<MealModel>mealModel =new ArrayList<>();
       try {

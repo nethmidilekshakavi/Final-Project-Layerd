@@ -28,12 +28,12 @@ public class EmployeeBOImpl implements EmployeeBO {
 
     @Override
     public boolean updateEmployee(EmployeeModel employeeModel) throws SQLException, ClassNotFoundException {
-        return employeeDao.update(new Employee(employeeModel.getE_ID(),employeeModel.getNIC(),employeeModel.getFirst_Name(),employeeModel.getLast_Name(),employeeModel.getAddress(),employeeModel.getPhone_Number(),employeeModel.getEmail(),employeeModel.getSalary(),employeeModel.getPosition(),employeeModel.getYear(),employeeModel.getMonth(),employeeModel.getDay()));
+        return employeeDao.Update(new Employee(employeeModel.getE_ID(),employeeModel.getNIC(),employeeModel.getFirst_Name(),employeeModel.getLast_Name(),employeeModel.getAddress(),employeeModel.getPhone_Number(),employeeModel.getEmail(),employeeModel.getSalary(),employeeModel.getPosition(),employeeModel.getYear(),employeeModel.getMonth(),employeeModel.getDay()));
     }
 
     @Override
     public boolean deleteEmployee(String id) throws SQLException, ClassNotFoundException {
-        return employeeDao.delete(id);
+        return employeeDao.Delete(id);
     }
 @Override
     public ArrayList<EmployeeModel> searchEid(String cid) throws SQLException, ClassNotFoundException {

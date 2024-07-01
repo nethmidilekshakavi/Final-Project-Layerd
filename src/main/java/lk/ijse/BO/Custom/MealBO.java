@@ -16,5 +16,5 @@ public interface MealBO extends SuperBo {
 
     boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
 
-    Meal serchbyIDS(String code) throws SQLException, ClassNotFoundException;
+
 }

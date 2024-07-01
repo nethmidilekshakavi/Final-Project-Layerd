@@ -22,15 +22,15 @@ public class CustomerRepo {
  /*  public static ArrayList<CustomerController> getAll() throws SQLException {}*/
 
 
-   /* public static ArrayList<CustomerController> searchCID (String cid){
-        ArrayList<CustomerController> customerModels = new ArrayList<>();
+   /* public static ArrayList<CustomerModel> searchCID (String cid){
+        ArrayList<CustomerModel> customerModels = new ArrayList<>();
         try {
             Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM CustomerController WHERE C_ID = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Customer WHERE C_ID = ?");
             preparedStatement.setString(1,cid);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
-                CustomerController customerModel = new CustomerController(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7));
+                CustomerModel customerModel = new CustomerModel(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getInt(6),resultSet.getString(7));
                 customerModels.add(customerModel);
             }
 

@@ -29,12 +29,12 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public boolean updateCustomer(CustomerModel customerModel) throws SQLException, ClassNotFoundException {
-        return customerDao.update(new Customer(customerModel.getC_ID(), customerModel.getNIC(), customerModel.getFirst_Name(), customerModel.getLast_Name(), customerModel.getAddress(), customerModel.getPhone_Number(), customerModel.getEmail()));
+        return customerDao.Update(new Customer(customerModel.getC_ID(), customerModel.getNIC(), customerModel.getFirst_Name(), customerModel.getLast_Name(), customerModel.getAddress(), customerModel.getPhone_Number(), customerModel.getEmail()));
     }
 
     @Override
     public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException {
-        return customerDao.delete(id);
+        return customerDao.Delete(id);
     }
 
     @Override
