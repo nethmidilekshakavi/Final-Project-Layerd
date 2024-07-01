@@ -22,7 +22,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.EmployeeBO;
+import lk.ijse.BO.Custom.SupplierBO;
+import lk.ijse.Model.EmployeeModel;
 import lk.ijse.Model.SupplierModel;
+import lk.ijse.Model.TM.EmployeeTM;
 import lk.ijse.Model.TM.SupplierTM;
 import lk.ijse.Model.TM.customerTM;
 import lk.ijse.Repository.SupplierRepo;
@@ -86,6 +91,8 @@ public class SupplierController {
     @FXML
     private AnchorPane pane;
 
+    SupplierBO supplierBO = (SupplierBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SUPPLIER);
+
     @FXML
     void addNewSupplier(ActionEvent event) throws IOException {
         AddNewSupplier.apane = pane;
@@ -103,84 +110,92 @@ public class SupplierController {
 
     }
     public void loadvalues() throws SQLException {
-        ArrayList<SupplierModel> allSupplier = SupplierRepo.getAll();
-        ObservableList<SupplierTM> observableList = FXCollections.observableArrayList();
+        try {
 
-        for (int i = 0; i < allSupplier.size(); i++) {
-            String mobile = String.valueOf(allSupplier.get(i).getPhone_Number());
-            SupplierTM supplierTM = new SupplierTM(allSupplier.get(i).getS_ID(), allSupplier.get(i).getName(), allSupplier.get(i).getAddress(), mobile, allSupplier.get(i).getIngredient(), allSupplier.get(i).getDate_Of_Purchase(), allSupplier.get(i).getAmount_due(), allSupplier.get(i).getDate_of_Payment(), allSupplier.get(i).getPayment_Type(), allSupplier.get(i).getAmount_Paid(), new JFXButton("Update"), new JFXButton("Delete"));
-            observableList.add(supplierTM);
-            SupplierTable.setItems(observableList);
-        }
+            //gellAllSupplier
+            ObservableList<SupplierTM> observableList = FXCollections.observableArrayList();
 
-        for (int i = 0; i < observableList.size(); i++) {
-            observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
-            observableList.get(i).getUpdate().setPrefWidth(100);
-            observableList.get(i).getUpdate().setPrefHeight(30);
-            observableList.get(i).getUpdate().setCursor(Cursor.HAND);
-            observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(166, 7, 33)");
-            observableList.get(i).getDelete().setPrefWidth(100);
-            observableList.get(i).getDelete().setPrefHeight(30);
-            observableList.get(i).getDelete().setCursor(Cursor.HAND);
-            observableList.get(i).getUpdate().setTextFill(Color.WHITE);
-            observableList.get(i).getDelete().setTextFill(Color.WHITE);
+            ArrayList<SupplierModel> supplierModels = supplierBO.getAllSupplier();
+            for (SupplierModel supplierModel : supplierModels) {
+                String mobile = String.valueOf(supplierModel.getPhone_Number());
 
-        }
-        for (int i = 0; i < observableList.size(); i++) {
-            String id = observableList.get(i).getS_ID();
-            observableList.get(i).getDelete().setOnAction(actionEvent -> {
-                Alert confirmDialog = new Alert(Alert.AlertType.CONFIRMATION);
-                confirmDialog.setTitle("Confirm Deletion");
-                confirmDialog.setHeaderText("Are you sure you want to delete this SupplierController?");
-                confirmDialog.setContentText("Press OK to confirm or Cancel to abort.");
+                SupplierTable.getItems().add(new SupplierTM(supplierModel.getS_ID(),supplierModel.getName(),supplierModel.getAddress(),mobile,supplierModel.getIngredient(),supplierModel.getDate_Of_Purchase(),supplierModel.getAmount_due(),supplierModel.getDate_of_Payment(),supplierModel.getPayment_Type(),supplierModel.getAmount_Paid(), new JFXButton("Update"), new JFXButton("Delete")));
 
-                confirmDialog.showAndWait().ifPresent(response -> {
-                    if (response == ButtonType.OK) {
-                        try {
-                            boolean deleted = SupplierRepo.delete(id);
-                            if (deleted) {
-                                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-                                successAlert.setTitle("Success");
-                                successAlert.setHeaderText(null);
-                                successAlert.setContentText("SupplierController Deleted Successfully");
-                                successAlert.showAndWait();
-                                // Reload values after successful deletion
+                SupplierTable.setItems(observableList);
+            }
+            for (int i = 0; i < observableList.size(); i++) {
+                observableList.get(i).getUpdate().setStyle("-fx-background-color: rgba(16, 176, 72)");
+                observableList.get(i).getUpdate().setPrefWidth(100);
+                observableList.get(i).getUpdate().setPrefHeight(30);
+                observableList.get(i).getUpdate().setCursor(Cursor.HAND);
+                observableList.get(i).getDelete().setStyle("-fx-background-color: rgba(166, 7, 33)");
+                observableList.get(i).getDelete().setPrefWidth(100);
+                observableList.get(i).getDelete().setPrefHeight(30);
+                observableList.get(i).getDelete().setCursor(Cursor.HAND);
+                observableList.get(i).getUpdate().setTextFill(Color.WHITE);
+                observableList.get(i).getDelete().setTextFill(Color.WHITE);
 
-                            } else {
-                                // Handle deletion failure
-                                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-                                errorAlert.setTitle("Error");
-                                errorAlert.setHeaderText(null);
-                                errorAlert.setContentText("Failed to delete SupplierController.");
-                                errorAlert.showAndWait();
+            }
+            for (int i = 0; i < observableList.size(); i++) {
+                String id = observableList.get(i).getS_ID();
+                observableList.get(i).getDelete().setOnAction(actionEvent -> {
+                    Alert confirmDialog = new Alert(Alert.AlertType.CONFIRMATION);
+                    confirmDialog.setTitle("Confirm Deletion");
+                    confirmDialog.setHeaderText("Are you sure you want to delete this SupplierController?");
+                    confirmDialog.setContentText("Press OK to confirm or Cancel to abort.");
+
+                    confirmDialog.showAndWait().ifPresent(response -> {
+                        if (response == ButtonType.OK) {
+                            try {
+                                boolean deleted = supplierBO.deleteSuippler(id);
+                                if (deleted) {
+                                    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                                    successAlert.setTitle("Success");
+                                    successAlert.setHeaderText(null);
+                                    successAlert.setContentText("SupplierController Deleted Successfully");
+                                    successAlert.showAndWait();
+                                    // Reload values after successful deletion
+
+                                } else {
+                                    // Handle deletion failure
+                                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                                    errorAlert.setTitle("Error");
+                                    errorAlert.setHeaderText(null);
+                                    errorAlert.setContentText("Failed to delete SupplierController.");
+                                    errorAlert.showAndWait();
+                                }
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            } catch (ClassNotFoundException e) {
+                                throw new RuntimeException(e);
                             }
-                        } catch (SQLException e) {
-                            throw new RuntimeException(e);
+                            try {
+                                loadvalues();
+                            } catch (SQLException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
-                        try {
-                            loadvalues();
-                        } catch (SQLException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
+                    });
                 });
-            });
 
 
-            observableList.get(i).getUpdate().setOnAction(actionEvent -> {
-                Parent parent = null;
-                try {
-                    parent = FXMLLoader.load(getClass().getResource("/view/updateSupplier.fxml"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                Scene scene =new Scene(parent);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.setTitle("Update SupplierController");
-                stage.centerOnScreen();
-                stage.show();
-            });
+                observableList.get(i).getUpdate().setOnAction(actionEvent -> {
+                    Parent parent = null;
+                    try {
+                        parent = FXMLLoader.load(getClass().getResource("/view/updateSupplier.fxml"));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Scene scene = new Scene(parent);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.setTitle("Update SupplierController");
+                    stage.centerOnScreen();
+                    stage.show();
+                });
+            }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
     public void setValues(){

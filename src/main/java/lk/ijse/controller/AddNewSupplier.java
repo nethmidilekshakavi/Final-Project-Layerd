@@ -16,6 +16,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.EmployeeBO;
+import lk.ijse.BO.Custom.SupplierBO;
+import lk.ijse.BO.SuperBo;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.SupplierModel;
 import lk.ijse.Repository.CustomerRepo;
@@ -105,7 +109,7 @@ public class AddNewSupplier {
     private TextField txtIngredient;
 
 
-
+    SupplierBO supplierBO  = (SupplierBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SUPPLIER);
     @FXML
     void dontSaveSupplier(ActionEvent event) {
         Stage stage =(Stage)sidtxt.getScene().getWindow();
@@ -117,7 +121,7 @@ public class AddNewSupplier {
 
 
     @FXML
-    void saveSupplier(ActionEvent event) throws SQLException, IOException {
+    void saveSupplier(ActionEvent event) throws SQLException, IOException, ClassNotFoundException {
 
         String sid = sidtxt.getText();
         String name = nametxt.getText();
@@ -131,8 +135,8 @@ public class AddNewSupplier {
         String amountPaid = AmountPaidtxt.getText();
 
 
-       SupplierModel supplierModel = new SupplierModel(sid,name,address,mobile,ingredient,dateOfPurchase,AmountDue,dateOfPayment,paymentType,amountPaid);
-        boolean a = SupplierRepo.saveSupplier(supplierModel);
+
+        boolean a = supplierBO.saveSupplier( new SupplierModel(sid,name,address,mobile,ingredient,dateOfPurchase,AmountDue,dateOfPayment,paymentType,amountPaid));
         System.out.println(a);
         if (a){
             new Alert(Alert.AlertType.CONFIRMATION,"SupplierController saved successfully").show();

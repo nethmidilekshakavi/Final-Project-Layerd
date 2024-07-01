@@ -363,10 +363,10 @@ public class ReservationController {
     }
 //meal
     @FXML
-    void comboMealList(ActionEvent event) {
+   /* void comboMealList(ActionEvent event) {
         String mid = reservationList.getValue();
         try{
-            Meal mealModel = mealBO.serchbyIDS(mid);
+            SupplierModel mealModel = SupplierRepo.searchById(mid);
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
                 //   QOHtxt.setText(mealModel.);
@@ -379,12 +379,8 @@ public class ReservationController {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
-    @FXML
-    void imageOnClick(MouseEvent event) {
-
-    }
 
 
     public void PrintOnAction(ActionEvent actionEvent) throws JRException, SQLException {

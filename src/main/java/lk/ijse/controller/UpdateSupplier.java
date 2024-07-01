@@ -15,6 +15,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.BO.BOFactory;
+import lk.ijse.BO.Custom.MealBO;
+import lk.ijse.BO.Custom.SupplierBO;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.IngredientModel;
 import lk.ijse.Model.MealModel;
@@ -107,6 +110,9 @@ public class UpdateSupplier {
     @FXML
     private ImageView updateSupplierPane;
 
+
+    SupplierBO supplierBO  = (SupplierBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.SUPPLIER);
+
     @FXML
     void dontSaveSupplier(ActionEvent event) {
         Stage stage =(Stage)sidtxt.getScene().getWindow();
@@ -129,8 +135,13 @@ public class UpdateSupplier {
        String PT = PaymentTypetxt.getText();
        String AP = AmountPaidtxt.getText();
 
-        SupplierModel supplierModel = new SupplierModel(sid,newname,addr,num,igre,dopur,amountdue,dopay,PT,AP);
-        boolean s = SupplierRepo.updateSupplier(supplierModel);
+
+        boolean s = false;
+        try {
+            s = supplierBO.updateSupplier(new SupplierModel(sid,newname,addr,num,igre,dopur,amountdue,dopay,PT,AP));
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         if (s) {
 

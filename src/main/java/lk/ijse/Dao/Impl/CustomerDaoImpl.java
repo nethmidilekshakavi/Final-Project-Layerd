@@ -50,7 +50,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public boolean Update(Customer Entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?", Entity.getNIC(), Entity.getFirst_Name(), Entity.getLast_Name(), Entity.getAddress(), Entity.getPhone_Number(), Entity.getEmail(), Entity.getC_ID());
+        return SQLUtil.execute("UPDATE Customer SET NIC = ?, First_Name = ?, Last_Name = ?, Address = ?  , Email = ?, Phone_Number = ?  WHERE C_ID = ?",Entity.getC_ID(), Entity.getNIC(), Entity.getFirst_Name(), Entity.getLast_Name(), Entity.getAddress(), Entity.getPhone_Number(), Entity.getEmail());
     }
 
     @Override
