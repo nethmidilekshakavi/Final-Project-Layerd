@@ -31,6 +31,8 @@ public class DaoFactory {
                return new IngredientDaoImpl();
             case SUPPLIER:
                 return new SupplierDaoImpl();
+            case ORDER:
+                return new OrderDaoImpl();
         }
         return null;
     }

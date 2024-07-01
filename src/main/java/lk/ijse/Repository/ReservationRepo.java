@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class ReservationRepo {
     //orderid
-   public static String getCurrentId() throws SQLException {
+  /* public static String getCurrentId() throws SQLException {
         String sql = "SELECT R_ID FROM Reservation ORDER BY R_ID DESC LIMIT 1";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -25,9 +25,9 @@ public class ReservationRepo {
             return orderId;
         }
         return null;
-    }
+    }*/
 
-    //saveOrder
+    //order
     public static boolean saveReservation(ReservationModel reservationModel) throws SQLException {
         try {
             Connection connection = DbConnection.getInstance().getConnection();

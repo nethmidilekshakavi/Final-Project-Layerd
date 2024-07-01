@@ -21,15 +21,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.Custom.CustomerBO;
 import lk.ijse.BO.Custom.MealBO;
+import lk.ijse.BO.Custom.PurchaseOrderBO;
 import lk.ijse.DB.DbConnection;
-import lk.ijse.Entity.Meal;
 import lk.ijse.Model.*;
 import lk.ijse.Model.TM.ReservationTM;
 import lk.ijse.Repository.*;
@@ -152,10 +151,11 @@ public class ReservationController {
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER);
     MealBO mealBO = (MealBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MEAL);
 
+    PurchaseOrderBO purchaseOrderBO = (PurchaseOrderBO)BOFactory.getBoFactory().getBO(BOFactory.BOTypes.PURCHASEORDER);
     public void initialize() {
         setDate();
         getCurrentOrderId();
-       // getCustomerIds();
+        getCustomerIds();
         getItemCodes();
         setCellValueFactory();
     }
@@ -202,12 +202,14 @@ public class ReservationController {
 //order
     private void getCurrentOrderId() {
         try {
-            String currentId = ReservationRepo.getCurrentId();
+            String currentId = purchaseOrderBO.generateOrderID();
 
             String nextOrderId = generateNextOrderId(currentId);
             reservationIDtxt.setText(nextOrderId);
 
         }  catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
@@ -217,7 +219,7 @@ public class ReservationController {
             int idNum = Integer.parseInt(split[1]);
             return "O" + ++idNum;
         }
-        return "O1";
+        return "O01";
     }
 
     private void setDate() {
@@ -363,23 +365,21 @@ public class ReservationController {
     }
 //meal
     @FXML
-   /* void comboMealList(ActionEvent event) {
+    void comboMealList(ActionEvent event) {
         String mid = reservationList.getValue();
         try{
             SupplierModel mealModel = SupplierRepo.searchById(mid);
             if(mealModel != null){
                 txtdesc.setText(mealModel.getName());
                 //   QOHtxt.setText(mealModel.);
-                ptxt.setText(mealModel.getPrice());
+
             }
 
             qtytxt.requestFocus();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
-    }*/
+    }
 
 
 
@@ -395,7 +395,10 @@ public class ReservationController {
 
         JasperViewer.viewReport(jasperPrint,false);
 
-}}
+}
+
+
+}
 
 
 
