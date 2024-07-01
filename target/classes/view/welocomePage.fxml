@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane onKeyPressed="#WelocomeOnAction" prefHeight="456.0" prefWidth="367.0" style="-fx-background-radius: 40; -fx-background-color: #285430;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.WelcomePage">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5f8d4e" height="45.0" layoutX="336.0" stroke="#5f8d4e" strokeType="INSIDE" width="43.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <AnchorPane fx:id="pane2" prefHeight="438.0" prefWidth="379.0" style="-fx-background-color: #5F8D4E; -fx-background-radius: 40;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5f8d4e" height="45.0" layoutY="411.0" stroke="#5f8d4e" strokeType="INSIDE" width="43.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+      <ImageView fx:id="welcomePage" fitHeight="456.0" fitWidth="379.0" layoutX="-11.0" layoutY="13.0" onKeyReleased="#enterOnAction">
+         <image>
+            <Image url="@../Images/Polish_20240426_122745983.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="foodcourt" fill="#f8f5f5" layoutX="66.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ELCOME TO FOOD COURT">
+         <font>
+            <Font name="Dyuthi Regular" size="27.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Text fx:id="W" fill="#eea411" layoutX="25.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W">
+         <font>
+            <Font name="Dyuthi Regular" size="46.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <ImageView fx:id="loading" fitHeight="113.0" fitWidth="140.0" layoutX="130.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+      <Text fx:id="loadingtxt" fill="#92e8a9" layoutX="152.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOADING">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Rectangle fx:id="rec" arcHeight="5.0" arcWidth="5.0" fill="#ff8a08" height="62.0" layoutX="-20.0" layoutY="-17.0" stroke="#c74a4a" strokeType="INSIDE" width="67.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" fill="#ff8a08" height="37.0" layoutX="336.0" layoutY="432.0" stroke="#c74a4a" strokeType="INSIDE" width="43.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <ImageView fx:id="loadingpic" fitHeight="113.0" fitWidth="120.0" layoutX="125.0" layoutY="146.0">
+         <image>
+            <Image url="@../Images/icons8-loading.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="788.0" prefWidth="1206.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.IngredientsController">
+   <children>
+      <ImageView fx:id="IngredientPage" fitHeight="889.0" fitWidth="1206.0" layoutY="-1.0">
+         <image>
+            <Image url="@../Images/c67eacaa9d63304bd4c77d22b284b1a6.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="title" fill="#0d0d0d" layoutX="465.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--Ingredients Details--">
+         <font>
+            <Font name="Dyuthi Regular" size="36.0" />
+         </font>
+      </Text>
+      <TableView fx:id="ingredientTable" layoutX="166.0" layoutY="184.0" prefHeight="432.0" prefWidth="875.0" stylesheets="@../Stylesheet/table.css">
+        <columns>
+          <TableColumn fx:id="colIid" prefWidth="143.0" text="IID" />
+          <TableColumn fx:id="colDesc" prefWidth="208.0" text="Description" />
+            <TableColumn fx:id="colQOh" prefWidth="150.0" text="Qty On Hand" />
+            <TableColumn fx:id="colSID" prefWidth="140.0" text="Supplier" />
+            <TableColumn fx:id="colupdate" prefWidth="112.0" text="UPDATE" />
+            <TableColumn fx:id="coldelete" prefWidth="120.0" text="DELETE" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Button fx:id="btnAdd" layoutX="974.0" layoutY="147.0" mnemonicParsing="false" onAction="#addNewIngredient" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #ffbd03;" stylesheets="@../Stylesheet/button.css" text="ADD">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPrint" layoutX="901.0" layoutY="147.0" mnemonicParsing="false" onAction="#getReport" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: #5adbb5;" stylesheets="@../Stylesheet/btn2.css" text="PRINT">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Rectangle fx:id="rec1" arcHeight="5.0" arcWidth="5.0" fill="#3c5b6f" height="55.0" layoutX="1.0" stroke="#3c5b6f" strokeType="INSIDE" width="50.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec3" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="55.0" layoutX="15.0" layoutY="15.0" stroke="#7aba78" strokeType="INSIDE" width="50.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec2" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="31.0" layoutX="65.0" layoutY="1.0" stroke="#7aba78" strokeType="INSIDE" width="27.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle fx:id="rec4" arcHeight="5.0" arcWidth="5.0" fill="#7aba78" height="31.0" layoutY="65.0" stroke="#7aba78" strokeType="INSIDE" width="27.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Circle fx:id="cir5" fill="#3c5b6f" layoutX="65.0" layoutY="70.0" radius="9.0" stroke="#3c5b6f" strokeType="INSIDE">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Circle>
+   </children>
+</AnchorPane>

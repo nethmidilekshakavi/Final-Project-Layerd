@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboard">
+   <children>
+      <AnchorPane fx:id="buttonSet" layoutX="-5.0" layoutY="-14.0" prefHeight="788.0" prefWidth="177.0" style="-fx-background-color: #135D66;">
+         <children>
+            <Button fx:id="btnReport" layoutX="46.0" layoutY="584.0" mnemonicParsing="false" onAction="#ReportOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnemployee" layoutX="47.0" layoutY="353.0" mnemonicParsing="false" onAction="#EmployeeOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnmeal" layoutX="47.0" layoutY="199.0" mnemonicParsing="false" onAction="#MealOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btncustomer" layoutX="47.0" layoutY="124.0" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btndashboard" layoutX="48.0" layoutY="48.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#fcf7f7">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btnsupplier" layoutX="47.0" layoutY="432.0" mnemonicParsing="false" onAction="#SupplierOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button fx:id="btningredients" layoutX="47.0" layoutY="276.0" mnemonicParsing="false" onAction="#IngredientOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Text fx:id="dashboardtxt" fill="#fcf2f2" layoutX="68.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DashBoard" wrappingWidth="58.00000000000006">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="Customertxt" fill="#fcf2f2" layoutX="68.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" wrappingWidth="58.00000000000006">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="mealtxt" fill="#fcf2f2" layoutX="79.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meals" wrappingWidth="30.000000000000057">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="employeetxt" fill="#fcf2f2" layoutX="69.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees" wrappingWidth="58.00000000000006">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="ingredienttxt" fill="#fcf2f2" layoutX="66.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients" wrappingWidth="66.00000000000011">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="supplierstxt" fill="#fcf2f2" layoutX="71.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers" wrappingWidth="66.00000000000011">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Text fx:id="reporttxt" fill="#fcf2f2" layoutX="74.0" layoutY="639.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports" wrappingWidth="42.99999999999994">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <Button fx:id="llogoutbtn" layoutX="55.0" layoutY="668.0" mnemonicParsing="false" onAction="#logOutTheSystem" prefHeight="39.0" prefWidth="74.0" style="-fx-background-color: #5dbea3; -fx-background-radius: 10;" text="LOGUOT" textFill="#f2ecec">
+               <font>
+                  <Font name="Dyuthi Regular" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <ImageView fx:id="dashboardpic" fitHeight="39.0" fitWidth="43.0" layoutX="73.0" layoutY="53.0">
+               <image>
+                  <Image url="@../Images/icons8-home-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="customerpic" fitHeight="39.0" fitWidth="43.0" layoutX="74.0" layoutY="128.0">
+               <image>
+                  <Image url="@../Images/icons8-customer-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mealpic" fitHeight="39.0" fitWidth="43.0" layoutX="72.0" layoutY="204.0">
+               <image>
+                  <Image url="@../Images/icons8-meal-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ingrepic" fitHeight="39.0" fitWidth="43.0" layoutX="75.0" layoutY="283.0">
+               <image>
+                  <Image url="@../Images/icons8-ingredients-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="employeepic" fitHeight="39.0" fitWidth="43.0" layoutX="68.0" layoutY="358.0">
+               <image>
+                  <Image url="@../Images/icons8-employee-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="supplierpic" fitHeight="39.0" fitWidth="43.0" layoutX="72.0" layoutY="437.0">
+               <image>
+                  <Image url="@../Images/icons8-supplier-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="reportpic" fitHeight="39.0" fitWidth="43.0" layoutX="73.0" layoutY="589.0">
+               <image>
+                  <Image url="@../Images/icons8-reports-58.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="logoutbtnpic" fitHeight="29.0" fitWidth="30.0" layoutX="72.0" layoutY="693.0" style="-fx-rotate: 180;">
+               <image>
+                  <Image url="@../Images/icons8-logout-24.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnreservation" layoutX="48.0" layoutY="509.0" mnemonicParsing="false" onAction="#ReservationOnAction" prefHeight="61.0" prefWidth="94.0" style="-fx-background-color: #135D66; -fx-background-radius: 20;" textFill="#f5efef">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Text fx:id="reservationtxt" fill="#fcf2f2" layoutX="65.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation" wrappingWidth="66.00000000000006">
+               <font>
+                  <Font name="System Bold Italic" size="9.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="orderpic" fitHeight="39.0" fitWidth="43.0" layoutX="69.0" layoutY="516.0">
+               <image>
+                  <Image url="@../Images/icons8-order-50.png" />
+               </image>
+            </ImageView>
+
+         </children></AnchorPane>
+      <AnchorPane fx:id="Emptypane" layoutX="173.0" layoutY="-5.0" prefHeight="768.0" prefWidth="1243.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>

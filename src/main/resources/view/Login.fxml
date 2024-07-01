@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="344.0" prefWidth="546.0" style=" -fx-background-color: black;" styleClass="shadowed" stylesheets="@../Stylesheet/CSS.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.Login">
+   <children>
+      <ImageView fx:id="loginphoto" fitHeight="351.0" fitWidth="553.0" layoutX="-3.0" layoutY="-3.0">
+         <image>
+            <Image url="@../Images/image-of-wooden-table-in-front-of-abstract-blurred-background-of-resturant-lights-wood-table-top-on-blur-of-lighting-in-night-cafe-restaurant-background-selective-focus-generative-ai-photo.jpg" />
+         </image></ImageView>
+      <AnchorPane fx:id="pane2" layoutX="152.0" layoutY="20.0" opacity="0.75" prefHeight="286.0" prefWidth="241.0" style="-fx-background-color: #B4CDE6; -fx-background-radius: 40;">
+         <styleClass>
+            <String fx:value="login" />
+            <String fx:value="shadowed" />
+         </styleClass>
+         <children>
+            <PasswordField fx:id="txtpw" layoutX="31.0" layoutY="137.0" opacity="0.94" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40; -fx-background-color: white;" />
+            <ImageView fx:id="userpic" layoutX="102.0" layoutY="8.0">
+               <image>
+                  <Image url="@../Images/icons8-user.gif" />
+               </image>
+            </ImageView>
+            <Text fx:id="password" fill="#111010" layoutX="36.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Text fx:id="ForgotPW" fill="#111010" layoutX="124.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Paaword?" wrappingWidth="98.44775390625">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Text>
+            <Button fx:id="login" layoutX="61.0" layoutY="187.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="24.0" prefWidth="116.0" style="-fx-background-color: FAA300; -fx-background-radius: 40;" text="Login" textFill="#1e0101">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Text fx:id="OR" fill="#111010" layoutX="30.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR Continue With" textAlignment="CENTER" wrappingWidth="172.44775390625">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="passwordpic" fitHeight="14.0" fitWidth="21.0" layoutX="190.0" layoutY="142.0">
+               <image>
+                  <Image url="@../Images/icons8-password-30.png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="c3" fill="#29455b" layoutX="6.0" layoutY="282.0" radius="24.0" stroke="#29455b" strokeType="INSIDE" />
+            <Circle fx:id="c1" fill="#12834b" layoutX="222.0" layoutY="24.0" opacity="0.92" radius="24.0" stroke="#12834b" strokeType="INSIDE" />
+            <Circle fx:id="c2" fill="#29455b" layoutX="211.0" layoutY="32.0" radius="19.0" stroke="#29455b" strokeType="INSIDE" />
+            <Circle fx:id="c4" fill="#a13a3a" layoutX="-18.0" layoutY="282.0" radius="19.0" stroke="#a13a3a" strokeType="INSIDE" />
+            <TextField fx:id="txtun" layoutX="31.0" layoutY="90.0" prefHeight="24.0" prefWidth="185.0" style="-fx-background-radius: 40;" />
+            <ImageView fx:id="usernamepic" fitHeight="14.0" fitWidth="21.0" layoutX="190.0" layoutY="95.0">
+               <image>
+                  <Image url="@../Images/icons8-user-50.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="username" fill="#111010" layoutX="35.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="FB" fitHeight="37.0" fitWidth="37.0" layoutX="229.0" layoutY="272.0">
+         <image>
+            <Image url="@../Images/icons8-facebook-48.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="GOOGLE" fitHeight="30.0" fitWidth="30.0" layoutX="272.0" layoutY="275.0">
+         <image>
+            <Image url="@../Images/icons8-google-48.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="Insterpic" fitHeight="37.0" fitWidth="37.0" layoutX="308.0" layoutY="272.0">
+
+      </ImageView>
+   </children>
+</AnchorPane>

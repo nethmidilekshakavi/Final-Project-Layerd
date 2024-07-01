@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="453.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.AddNewSupplier">
+   <children>
+      <ImageView fx:id="AddNewSupplierPage" fitHeight="454.0" fitWidth="711.0">
+         <image>
+            <Image url="@../Images/beautiful-wood-background-with-text-space-free-vector.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Text fx:id="SupplierInfor" fill="#f0f5f8" layoutX="220.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--Supplier Information--" wrappingWidth="357.017578125">
+         <font>
+            <Font name="Dyuthi Regular" size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="name" fill="WHITE" layoutX="45.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <Text fx:id="address" fill="WHITE" layoutX="43.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <Text fx:id="SID" fill="WHITE" layoutX="45.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SID :" wrappingWidth="36.0673828125">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <Text fx:id="mobile" fill="WHITE" layoutX="43.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="sidtxt" layoutX="91.0" layoutY="94.0" onKeyReleased="#sidKeyRelese" opacity="0.72" prefHeight="24.0" prefWidth="104.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="addresstxt" layoutX="180.0" layoutY="184.0" opacity="0.72" prefHeight="16.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <TextField fx:id="mobiletxt" layoutX="180.0" layoutY="219.0" onKeyReleased="#numKeyRelese" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="ingredient" fill="WHITE" layoutX="48.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredient :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="txtIngredient" layoutX="180.0" layoutY="281.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Button fx:id="btnSave" layoutX="610.0" layoutY="386.0" mnemonicParsing="false" onAction="#saveSupplier" prefHeight="33.0" prefWidth="75.0" style="-fx-background-radius: 10; -fx-background-color: #33b249;" text="SAVE" textFill="#171717">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnCancel" layoutX="519.0" layoutY="386.0" mnemonicParsing="false" onAction="#dontSaveSupplier" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #B5C0D0;" text="CANCEL" textFill="#171717">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
+      <Text fx:id="dateOdPurchase" fill="WHITE" layoutX="376.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Purchase :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="purchasetxt" layoutX="520.0" layoutY="272.0" opacity="0.72" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="amountDue" fill="WHITE" layoutX="45.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="AmountDuetxt" layoutX="180.0" layoutY="313.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="dateOdPayment" fill="WHITE" layoutX="379.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Payment :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="dataOfPaymenttxt" layoutX="520.0" layoutY="316.0" opacity="0.72" prefHeight="24.0" prefWidth="151.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="dateOdPayment1" fill="WHITE" layoutX="46.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Type :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="PaymentTypetxt" layoutX="181.0" layoutY="346.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Text fx:id="AmountPaid" fill="WHITE" layoutX="44.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Paid :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Text>
+      <TextField fx:id="AmountPaidtxt" layoutX="181.0" layoutY="380.0" opacity="0.72" prefHeight="24.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <Button fx:id="clear" layoutX="427.0" layoutY="388.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="33.0" prefWidth="85.0" style="-fx-background-radius: 10; -fx-background-color: #F8C794;" text="Clear">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nametxt" layoutX="137.0" layoutY="148.0" opacity="0.72" prefHeight="15.0" prefWidth="166.0" style="-fx-background-radius: 40;" />
+      <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="496.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/c6f01bef9c13add9bf586ae2d304ec07.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="100.0" layoutX="437.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 350;">
+         <image>
+            <Image url="@../Images/5f08006f46ecef33095d028f84cc5e65.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
