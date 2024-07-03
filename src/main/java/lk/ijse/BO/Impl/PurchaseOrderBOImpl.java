@@ -239,16 +239,14 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
             return false;
         }
 
-        PreparedStatement ptsm2;
-
-        for (int j = 0; j < arrayList.size(); j++) {
-            ptsm2= connection.prepareStatement("INSERT INTO Reservation_Details VALUES(?, ?, ?, ?)");
-            ptsm2.setObject(1,arrayList.get(j).getQty());
-            ptsm2.setObject(2,arrayList.get(j).getUnitPrice());
-            ptsm2.setObject(3,arrayList.get(j).getRid());
-            ptsm2.setObject(4,arrayList.get(j).getMid());
-
-            int i1 = ptsm2.executeUpdate();
+        for (ReservationDetailModel d : reservationModel.getOrderDetails()) {
+            OrderDetails orderDetails = new OrderDetails(d.getRid(),d.getMid(),d.getQty(),d.getUnitPrice());
+            boolean b3 = orderDetailDao.add(orderDetails);
+            if (!b3) {
+                connection.rollback();
+                connection.setAutoCommit(true);
+                return false;
+            }
         }
 
             Meal meal = new Meal();

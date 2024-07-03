@@ -50,9 +50,7 @@ public class OrderDaoImpl implements OrderDao {
     public Reservation search(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
-
-
-
+    
     @Override
     public boolean add(Reservation entity) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Reservation VALUES(?,?,?,?,?,?)",entity.getRID(),entity.getCID(),entity.getDate(),entity.getDescription(),entity.getTime(),entity.getTotal());

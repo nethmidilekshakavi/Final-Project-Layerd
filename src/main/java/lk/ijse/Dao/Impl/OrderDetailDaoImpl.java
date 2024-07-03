@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class OrderDetailDaoImpl implements OrderDetailDao {
     @Override
     public boolean add(OrderDetails entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO Reservation_Detail VALUES(?, ?, ?, ?)",entity.getRid(),entity.getQty(),entity.getUnitPrice());
+        return SQLUtil.execute("INSERT INTO Reservation_Detail VALUES(?, ?, ?, ?)",entity.getQty(),entity.getUnitPrice(),entity.getRid(),entity.getMealid());
 
     }
 

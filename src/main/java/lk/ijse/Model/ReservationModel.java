@@ -17,4 +17,19 @@ public class ReservationModel {
     private String time;
     private String total;
 
+    List<ReservationDetailModel> orderDetails;
+
+    public ReservationModel(String reId, String custId, String date, String des, String time, String s) {
+
+    }
+
+    public List<ReservationDetailModel> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<ReservationDetailModel> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+
 }
