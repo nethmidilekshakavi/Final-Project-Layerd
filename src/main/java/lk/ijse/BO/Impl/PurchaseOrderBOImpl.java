@@ -9,7 +9,6 @@ import lk.ijse.Model.*;
 import lombok.SneakyThrows;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -232,7 +231,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
         connection.setAutoCommit(false);
 
 
-        boolean b2 = orderDao.add(new Reservation(reservationModel.getRID(), reservationModel.getCID(), reservationModel.getDate(), reservationModel.getDescription(), reservationModel.getTime(), reservationModel.getTotal()));
+        boolean b2 = orderDao.add(new ReservationModel(reservationModel.getRID(),reservationModel.getCID(), reservationModel.getDate(), reservationModel.getDescription(), reservationModel.getTime(), reservationModel.getTotal()));
         if (!b2) {
             connection.rollback();
             connection.setAutoCommit(true);
@@ -240,7 +239,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
         }
 
         for (ReservationDetailModel d : reservationModel.getOrderDetails()) {
-            OrderDetails orderDetails = new OrderDetails(d.getRid(),d.getMid(),d.getQty(),d.getUnitPrice());
+            OrderDetails orderDetails = new OrderDetails(d.getQty(),d.getUnitPrice(),d.getRid(),d.getMid());
             boolean b3 = orderDetailDao.add(orderDetails);
             if (!b3) {
                 connection.rollback();

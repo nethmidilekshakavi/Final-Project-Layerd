@@ -4,6 +4,7 @@ import lk.ijse.DB.DbConnection;
 import lk.ijse.Dao.Custom.OrderDao;
 import lk.ijse.Dao.SQLUtil;
 import lk.ijse.Entity.Reservation;
+import lk.ijse.Model.ReservationModel;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,7 +53,7 @@ public class OrderDaoImpl implements OrderDao {
     }
     
     @Override
-    public boolean add(Reservation entity) throws SQLException, ClassNotFoundException {
+    public boolean add(ReservationModel entity) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("INSERT INTO Reservation VALUES(?,?,?,?,?,?)",entity.getRID(),entity.getCID(),entity.getDate(),entity.getDescription(),entity.getTime(),entity.getTotal());
     }
 
