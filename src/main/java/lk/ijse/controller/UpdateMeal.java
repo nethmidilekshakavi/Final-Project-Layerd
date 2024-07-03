@@ -1,4 +1,4 @@
-package lk.ijse.controller.Update;
+package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.Custom.MealBO;
 import lk.ijse.Model.MealModel;
-import lk.ijse.controller.MealController;
 
 import java.net.URL;
 import java.sql.SQLException;

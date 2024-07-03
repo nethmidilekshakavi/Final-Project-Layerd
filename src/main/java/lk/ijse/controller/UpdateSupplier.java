@@ -1,4 +1,4 @@
-package lk.ijse.controller.Update;
+package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

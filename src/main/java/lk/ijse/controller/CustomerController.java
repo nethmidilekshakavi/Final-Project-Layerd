@@ -29,7 +29,6 @@ import lk.ijse.DB.DbConnection;
 import lk.ijse.Model.CustomerModel;
 import lk.ijse.Model.TM.customerTM;
 import lk.ijse.controller.ADD.AddNewCustomer;
-import lk.ijse.controller.Update.UpdateCustomer;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -215,7 +214,7 @@ public class CustomerController {
                     Scene scene = new Scene(parent);
                     Stage stage = new Stage();
                     stage.setScene(scene);
-                    stage.setTitle("Update CustomerController");
+                    stage.setTitle("Update Customer");
                     stage.centerOnScreen();
                     stage.show();
                 });

@@ -1,4 +1,4 @@
-package lk.ijse.controller.Update;
+package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -129,6 +129,7 @@ public class UpdateCustomer {
             successAlert.setHeaderText(null);
             successAlert.setContentText("Customer details updated successfully.");
             successAlert.showAndWait();
+            
 
             ((Node) (event.getSource())).getScene().getWindow().hide();
         } else {
